@@ -10,9 +10,4 @@ RUN npm install --silent --global \
 
 USER circleci
 
-RUN npm install --silent --save-dev \
-    karma \
-    karma-cljs-test \
-    karma-chrome-launcher
-
 RUN curl -sL https://sentry.io/get-cli/ | bash
