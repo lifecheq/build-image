@@ -8,9 +8,9 @@ RUN npm install --silent --global \
     karma-cli \
     firebase-tools
 
+RUN echo '(defproject dummy "" :dependencies [[cljsbuild "1.1.7"]])' > project.clj \
+  && lein deps && rm project.clj
+
 USER circleci
 
 RUN curl -sL https://sentry.io/get-cli/ | bash
-
-RUN echo '(defproject dummy "" :dependencies [[lein-cljsbuild "1.1.7"]])' > project.clj \
-  && lein deps && rm project.clj
