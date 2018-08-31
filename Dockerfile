@@ -6,7 +6,8 @@ USER root
 
 RUN npm install --silent --global \
     karma-cli \
-    firebase-tools
+    firebase-tools \
+    firebase-bolt
 
 RUN echo '(defproject dummy "" :dependencies [[cljsbuild "1.1.7"]])' > project.clj \
   && lein deps && rm project.clj
